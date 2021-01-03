@@ -14,14 +14,14 @@ public class Main {
         in.close();
 
         Cell[][] grid= {
-                {new Cell(State.DIED),new Cell(State.DIED),new Cell(State.DIED)},
+                {new Cell(State.DEAD),new Cell(State.DEAD),new Cell(State.DEAD)},
                 {new Cell(State.ALIVE),new Cell(State.ALIVE),new Cell(State.ALIVE)},
-                {new Cell(State.DIED),new Cell(State.DIED),new Cell(State.DIED)}
+                {new Cell(State.DEAD),new Cell(State.DEAD),new Cell(State.DEAD)}
         };
+
         Universe universe=new Universe(grid);
 
         for(int iter =0 ;iter<iterations;iter++ ){
-
             System.out.print("Génération n°"+iter);
             universe.display();
             System.out.println("\n\n\n");

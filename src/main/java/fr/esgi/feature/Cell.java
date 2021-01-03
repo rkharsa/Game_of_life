@@ -21,11 +21,11 @@ public class Cell {
             if (nbNeighbours == 2 || nbNeighbours == 3) {
                 return State.ALIVE;
             } else {
-                return  State.DIED;
+                return  State.DEAD;
             }
         }
 
-        if (this.getState().equals(State.DIED)) {
+        if (this.getState().equals(State.DEAD)) {
             if (nbNeighbours== 3) {
                 return State.ALIVE;
             }

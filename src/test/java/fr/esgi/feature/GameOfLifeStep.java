@@ -1,7 +1,5 @@
 package fr.esgi.feature;
 
-import fr.esgi.feature.Universe;
-import fr.esgi.feature.State;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.fr.Alors;
 import io.cucumber.java.fr.Etantdonnéque;
@@ -21,7 +19,7 @@ public class GameOfLifeStep {
                 if("x".equals(rows.get(x).get(y)))
                     generation[x][y]=new Cell(State.ALIVE);
                 else
-                    generation[x][y]=new Cell(State.DIED);
+                    generation[x][y]=new Cell(State.DEAD);
             }
         }
         return  generation;
@@ -45,7 +43,7 @@ public class GameOfLifeStep {
     @Alors("la cellule au centre devrait mourir")
     public void laCelluleAuCentreDevraitMourir() {
         int middle= universe.getGeneration().length/2;
-        State expected=State.DIED;
+        State expected=State.DEAD;
         Assert.assertEquals(expected, universe.getGeneration()[middle][middle].getState());
 
     }
